@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SikhoqanguleApplication {
+public class WasteSortingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SikhoqanguleApplication.class, args);
+		SpringApplication.run(WasteSortingApplication.class, args);
 	}
 
 }
