@@ -1,14 +1,22 @@
 package com.enviro.assessment.grad001.sikhoqangule.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
+@Table(name = "Categories")
 public class WasteCategory {
 
-    private Long id;  // will be primary key in db
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    // these will be other columns
+    @NotNull
+    @Size(min = 3, max = 50)
     private String name;
+
+    @NotNull
+    @Size(max = 255)
     private String description;
 
     public Long getId() {
