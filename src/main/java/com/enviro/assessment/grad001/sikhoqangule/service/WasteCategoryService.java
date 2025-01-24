@@ -26,7 +26,7 @@ public class WasteCategoryService {
     }
 
     public WasteCategory updateCategory(Long id, WasteCategory wasteCategoryUpdate) {
-        WasteCategory wasteCategory = repository.findById(id).orElseThrow(() -> new RuntimeException("Category not found"));
+        WasteCategory wasteCategory = repository.findById(id).orElseThrow(() -> new RuntimeException("Waste category not found"));
         wasteCategory.setName(wasteCategoryUpdate.getName());
         wasteCategory.setDescription(wasteCategoryUpdate.getDescription());
         return repository.save(wasteCategory);
