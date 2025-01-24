@@ -8,7 +8,9 @@ import com.enviro.assessment.grad001.sikhoqangule.persistence.RecyclingTipReposi
 import com.enviro.assessment.grad001.sikhoqangule.persistence.WasteCategoryRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class DatabaseConfiguration {
     @Bean
     CommandLineRunner initDatabase(WasteCategoryRepository categoryRepository,
