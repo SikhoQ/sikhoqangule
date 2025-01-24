@@ -19,6 +19,16 @@ public class WasteCategory {
     @Size(max = 255)
     private String description;
 
+    // default constructor is required by JPA
+    public WasteCategory() {}
+
+    // to allow easy population when configuring db
+    public WasteCategory(Long id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
     public Long getId() {
         return id;
     }

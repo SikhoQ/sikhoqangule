@@ -18,6 +18,16 @@ public class RecyclingTip {
     @NotNull
     private Long wasteCategoryId;
 
+    // default constructor is required by JPA
+    public RecyclingTip() {}
+
+    // to allow easy population when configuring db
+    public RecyclingTip(Long id, String tip, Long wasteCategoryId) {
+        this.id = id;
+        this.tip = tip;
+        this.wasteCategoryId = wasteCategoryId;
+    }
+
     public Long getId() {
         return id;
     }

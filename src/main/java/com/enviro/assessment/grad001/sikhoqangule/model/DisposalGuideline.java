@@ -18,6 +18,16 @@ public class DisposalGuideline {
     @NotNull
     private Long wasteCategoryId;
 
+    // default constructor is required by JPA
+    public DisposalGuideline() {}
+
+    // to allow easy population when configuring db
+    public DisposalGuideline(Long id, String guideline, Long wasteCategoryId) {
+        this.id = id;
+        this.guideline = guideline;
+        this.wasteCategoryId = wasteCategoryId;
+    }
+
     public Long getId() {
         return id;
     }
