@@ -15,16 +15,17 @@ public class DisposalGuideline {
     @Size(min = 3, max = 100)
     private String guideline;
 
-    @NotNull
-    private Long wasteCategoryId;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private WasteCategory wasteCategory;
 
     // default constructor is required by JPA
     public DisposalGuideline() {}
 
     // to allow easy population when configuring db
-    public DisposalGuideline(String guideline, Long wasteCategoryId) {
+    public DisposalGuideline(String guideline, WasteCategory wasteCategory) {
         this.guideline = guideline;
-        this.wasteCategoryId = wasteCategoryId;
+        this.wasteCategory = wasteCategory;
     }
 
     public Long getId() {
@@ -43,11 +44,11 @@ public class DisposalGuideline {
         this.guideline = guideline;
     }
 
-    public Long getWasteCategoryId() {
-        return wasteCategoryId;
+    public WasteCategory getWasteCategory() {
+        return wasteCategory;
     }
 
-    public void setWasteCategoryId(Long wasteCategoryId) {
-        this.wasteCategoryId = wasteCategoryId;
+    public void setWasteCategory(WasteCategory wasteCategory) {
+        this.wasteCategory = wasteCategory;
     }
 }

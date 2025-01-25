@@ -15,16 +15,17 @@ public class RecyclingTip {
     @Size(min = 3, max = 150)
     private String tip;
 
-    @NotNull
-    private Long wasteCategoryId;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private WasteCategory wasteCategory;
 
     // default constructor is required by JPA
     public RecyclingTip() {}
 
     // to allow easy population when configuring db
-    public RecyclingTip(String tip, Long wasteCategoryId) {
+    public RecyclingTip(String tip, WasteCategory wasteCategory) {
         this.tip = tip;
-        this.wasteCategoryId = wasteCategoryId;
+        this.wasteCategory = wasteCategory;
     }
 
     public Long getId() {
@@ -43,11 +44,11 @@ public class RecyclingTip {
         this.tip = tip;
     }
 
-    public Long getWasteCategoryId() {
-        return wasteCategoryId;
+    public WasteCategory getWasteCategory() {
+        return wasteCategory;
     }
 
-    public void setWasteCategoryId(Long wasteCategoryId) {
-        this.wasteCategoryId = wasteCategoryId;
+    public void setWasteCategory(WasteCategory wasteCategory) {
+        this.wasteCategory = wasteCategory;
     }
 }

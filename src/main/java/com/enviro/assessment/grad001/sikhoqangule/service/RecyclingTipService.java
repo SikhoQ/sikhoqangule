@@ -28,7 +28,7 @@ public class RecyclingTipService {
     public RecyclingTip updateTip(Long id, RecyclingTip recyclingTipUpdate) {
         RecyclingTip recyclingTip = repository.findById(id).orElseThrow(() -> new RuntimeException("Recycling tip not found"));
         recyclingTip.setTip(recyclingTipUpdate.getTip());
-        recyclingTip.setWasteCategoryId(recyclingTipUpdate.getWasteCategoryId());
+        recyclingTip.setWasteCategory(recyclingTipUpdate.getWasteCategory());
         return repository.save(recyclingTip);
     }
 

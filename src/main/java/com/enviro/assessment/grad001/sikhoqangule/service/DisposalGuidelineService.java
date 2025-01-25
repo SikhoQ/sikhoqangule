@@ -28,7 +28,7 @@ public class DisposalGuidelineService {
     public DisposalGuideline updateGuideline(Long id, DisposalGuideline disposalGuidelineUpdate) {
         DisposalGuideline disposalGuideline = repository.findById(id).orElseThrow(() -> new RuntimeException("Disposal guideline not found"));
         disposalGuideline.setGuideline(disposalGuidelineUpdate.getGuideline());
-        disposalGuideline.setWasteCategoryId(disposalGuidelineUpdate.getWasteCategoryId());
+        disposalGuideline.setWasteCategory(disposalGuidelineUpdate.getWasteCategory());
         return repository.save(disposalGuideline);
     }
 
