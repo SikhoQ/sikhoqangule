@@ -15,11 +15,11 @@ public class WasteCategory {
     private Long id;
 
     @NotNull
-    @Size(min = 3, max = 50)
+    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     private String name;
 
     @NotNull
-    @Size(max = 255)
+    @Size(max = 255, message = "Description cannot exceed 255 characters")
     private String description;
 
     @OneToMany(mappedBy = "wasteCategory", cascade = CascadeType.ALL, orphanRemoval = true)

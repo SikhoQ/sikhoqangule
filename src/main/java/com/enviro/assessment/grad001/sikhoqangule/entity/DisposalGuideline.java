@@ -12,7 +12,7 @@ public class DisposalGuideline {
     private Long id;
 
     @NotNull
-    @Size(min = 3, max = 100)
+    @Size(min = 3, max = 100, message = "Disposal guideline must be between 3 and 100 characters")
     private String guideline;
 
     @ManyToOne

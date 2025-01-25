@@ -12,7 +12,7 @@ public class RecyclingTip {
     private Long id;
 
     @NotNull
-    @Size(min = 3, max = 150)
+    @Size(min = 3, max = 150, message = "Recycle tip must be between 3 and 150 characters")
     private String tip;
 
     @ManyToOne
