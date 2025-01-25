@@ -1,4 +1,4 @@
-package com.enviro.assessment.grad001.sikhoqangule.model;
+package com.enviro.assessment.grad001.sikhoqangule.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -22,8 +22,7 @@ public class RecyclingTip {
     public RecyclingTip() {}
 
     // to allow easy population when configuring db
-    public RecyclingTip(Long id, String tip, Long wasteCategoryId) {
-        this.id = id;
+    public RecyclingTip(String tip, Long wasteCategoryId) {
         this.tip = tip;
         this.wasteCategoryId = wasteCategoryId;
     }

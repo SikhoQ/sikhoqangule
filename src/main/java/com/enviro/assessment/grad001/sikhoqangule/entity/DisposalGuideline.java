@@ -1,4 +1,4 @@
-package com.enviro.assessment.grad001.sikhoqangule.model;
+package com.enviro.assessment.grad001.sikhoqangule.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -22,8 +22,7 @@ public class DisposalGuideline {
     public DisposalGuideline() {}
 
     // to allow easy population when configuring db
-    public DisposalGuideline(Long id, String guideline, Long wasteCategoryId) {
-        this.id = id;
+    public DisposalGuideline(String guideline, Long wasteCategoryId) {
         this.guideline = guideline;
         this.wasteCategoryId = wasteCategoryId;
     }

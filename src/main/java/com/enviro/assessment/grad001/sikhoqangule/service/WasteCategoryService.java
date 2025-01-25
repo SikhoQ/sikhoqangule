@@ -1,6 +1,6 @@
 package com.enviro.assessment.grad001.sikhoqangule.service;
 
-import com.enviro.assessment.grad001.sikhoqangule.model.WasteCategory;
+import com.enviro.assessment.grad001.sikhoqangule.entity.WasteCategory;
 import com.enviro.assessment.grad001.sikhoqangule.persistence.WasteCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

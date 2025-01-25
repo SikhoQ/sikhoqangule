@@ -1,6 +1,6 @@
 package com.enviro.assessment.grad001.sikhoqangule.service;
 
-import com.enviro.assessment.grad001.sikhoqangule.model.RecyclingTip;
+import com.enviro.assessment.grad001.sikhoqangule.entity.RecyclingTip;
 import com.enviro.assessment.grad001.sikhoqangule.persistence.RecyclingTipRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.enviro.assessment.grad001.sikhoqangule.service;
 
-import com.enviro.assessment.grad001.sikhoqangule.model.DisposalGuideline;
+import com.enviro.assessment.grad001.sikhoqangule.entity.DisposalGuideline;
 import com.enviro.assessment.grad001.sikhoqangule.persistence.DisposalGuidelineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

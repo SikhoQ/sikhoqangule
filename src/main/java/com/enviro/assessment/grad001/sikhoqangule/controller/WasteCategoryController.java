@@ -1,6 +1,6 @@
 package com.enviro.assessment.grad001.sikhoqangule.controller;
 
-import com.enviro.assessment.grad001.sikhoqangule.model.WasteCategory;
+import com.enviro.assessment.grad001.sikhoqangule.entity.WasteCategory;
 import com.enviro.assessment.grad001.sikhoqangule.service.WasteCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

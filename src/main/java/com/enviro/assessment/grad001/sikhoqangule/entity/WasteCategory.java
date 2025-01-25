@@ -1,4 +1,4 @@
-package com.enviro.assessment.grad001.sikhoqangule.model;
+package com.enviro.assessment.grad001.sikhoqangule.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -23,8 +23,7 @@ public class WasteCategory {
     public WasteCategory() {}
 
     // to allow easy population when configuring db
-    public WasteCategory(Long id, String name, String description) {
-        this.id = id;
+    public WasteCategory(String name, String description) {
         this.name = name;
         this.description = description;
     }

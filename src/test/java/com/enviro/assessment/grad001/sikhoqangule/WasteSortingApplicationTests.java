@@ -1,6 +1,6 @@
 package com.enviro.assessment.grad001.sikhoqangule;
 
-import com.enviro.assessment.grad001.sikhoqangule.model.WasteCategory;
+import com.enviro.assessment.grad001.sikhoqangule.entity.WasteCategory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,7 +27,7 @@ public class WasteSortingApplicationTests {
 
 	@Test
 	public void testCreateCategory() {
-		WasteCategory newCategory = new WasteCategory(null, "Metal", "Metal waste such as cans");
+		WasteCategory newCategory = new WasteCategory("Metal", "Metal waste such as cans");
 		ResponseEntity<WasteCategory> response = restTemplate.postForEntity("/api/categories", newCategory, WasteCategory.class);
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 		assertThat(response.getBody()).isNotNull();
@@ -36,7 +36,7 @@ public class WasteSortingApplicationTests {
 
 	@Test
 	public void testGetCategoryById() {
-		WasteCategory newCategory = new WasteCategory(null, "Paper", "Normal paper");
+		WasteCategory newCategory = new WasteCategory("Paper", "Normal paper");
 		ResponseEntity<WasteCategory> created = restTemplate.postForEntity("/api/categories", newCategory, WasteCategory.class);
 		Long createdId = Objects.requireNonNull(created.getBody()).getId();
 

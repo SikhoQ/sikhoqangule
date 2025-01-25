@@ -1,6 +1,6 @@
 package com.enviro.assessment.grad001.sikhoqangule.controller;
 
-import com.enviro.assessment.grad001.sikhoqangule.model.DisposalGuideline;
+import com.enviro.assessment.grad001.sikhoqangule.entity.DisposalGuideline;
 import com.enviro.assessment.grad001.sikhoqangule.service.DisposalGuidelineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
