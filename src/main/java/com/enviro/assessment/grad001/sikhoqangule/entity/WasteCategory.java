@@ -1,5 +1,6 @@
 package com.enviro.assessment.grad001.sikhoqangule.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -24,11 +25,11 @@ public class WasteCategory {
     private String description;
 
     @OneToMany(mappedBy = "wasteCategory", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    @JsonIgnoreProperties("wasteCategory")
     private List<DisposalGuideline> disposalGuidelines = new ArrayList<>();
 
-    @JsonManagedReference
     @OneToMany(mappedBy = "wasteCategory", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("wasteCategory")
     private List<RecyclingTip> recyclingTips = new ArrayList<>();
 
     // default constructor is required by JPA
