@@ -1,6 +1,7 @@
 package com.enviro.assessment.grad001.sikhoqangule.service;
 
 import com.enviro.assessment.grad001.sikhoqangule.entity.WasteCategory;
+import com.enviro.assessment.grad001.sikhoqangule.exception.ResourceNotFoundException;
 import com.enviro.assessment.grad001.sikhoqangule.persistence.WasteCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,9 @@ public class WasteCategoryService {
         return repository.findAll();
     }
 
-    public Optional<WasteCategory> getCategoryById(Long id) {
-        return repository.findById(id);
+    public WasteCategory getCategoryById(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Category with ID " + id + " not found"));
     }
 
     public WasteCategory createCategory(WasteCategory wasteCategory) {

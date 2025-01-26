@@ -22,9 +22,7 @@ public class WasteCategoryController {
 
     @GetMapping("/{id}")
     public ResponseEntity<WasteCategory> getCategoryById(@PathVariable Long id) {
-        return service.getCategoryById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+        return ResponseEntity.ok(service.getCategoryById(id));
     }
 
     @PostMapping
