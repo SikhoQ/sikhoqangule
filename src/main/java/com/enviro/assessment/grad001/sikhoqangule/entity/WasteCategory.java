@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Categories")
+@Table(name = "WASTE_CATEGORIES")
 public class WasteCategory {
 
     @Id
@@ -17,7 +17,7 @@ public class WasteCategory {
 
     @NotNull
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
-    private String name;
+    private String categoryName;
 
     @NotNull
     @Size(max = 255, message = "Description cannot exceed 255 characters")
@@ -35,8 +35,8 @@ public class WasteCategory {
     public WasteCategory() {}
 
     // to allow easy population when configuring db
-    public WasteCategory(String name, String description) {
-        this.name = name;
+    public WasteCategory(String categoryName, String description) {
+        this.categoryName = categoryName;
         this.description = description;
     }
 
@@ -56,12 +56,12 @@ public class WasteCategory {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public String getDescription() {

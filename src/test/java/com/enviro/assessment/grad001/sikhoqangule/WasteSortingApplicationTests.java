@@ -31,7 +31,7 @@ public class WasteSortingApplicationTests {
 		ResponseEntity<WasteCategory> response = restTemplate.postForEntity("/api/categories", newCategory, WasteCategory.class);
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 		assertThat(response.getBody()).isNotNull();
-		assertThat(response.getBody().getName()).isEqualTo("Metal");
+		assertThat(response.getBody().getCategoryName()).isEqualTo("Metal");
 	}
 
 	@Test

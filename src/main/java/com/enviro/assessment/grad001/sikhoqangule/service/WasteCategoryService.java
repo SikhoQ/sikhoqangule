@@ -6,7 +6,6 @@ import com.enviro.assessment.grad001.sikhoqangule.persistence.WasteCategoryRepos
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class WasteCategoryService {
@@ -29,7 +28,7 @@ public class WasteCategoryService {
 
     public WasteCategory updateCategory(Long id, WasteCategory wasteCategoryUpdate) {
         WasteCategory wasteCategory = repository.findById(id).orElseThrow(() -> new RuntimeException("Waste category not found"));
-        wasteCategory.setName(wasteCategoryUpdate.getName());
+        wasteCategory.setCategoryName(wasteCategoryUpdate.getCategoryName());
         wasteCategory.setDescription(wasteCategoryUpdate.getDescription());
         return repository.save(wasteCategory);
     }

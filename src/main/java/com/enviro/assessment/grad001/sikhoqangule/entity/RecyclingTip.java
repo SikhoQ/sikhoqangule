@@ -1,11 +1,12 @@
 package com.enviro.assessment.grad001.sikhoqangule.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
 @Entity
-@Table(name = "Tips")
+@Table(name = "RECYCLE_TIPS")
 public class RecyclingTip {
 
     @Id
@@ -18,7 +19,7 @@ public class RecyclingTip {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    @JsonBackReference
+    @JsonIgnoreProperties({"recyclingTips", "disposalGuidelines"})
     private WasteCategory wasteCategory;
 
     // default constructor is required by JPA
