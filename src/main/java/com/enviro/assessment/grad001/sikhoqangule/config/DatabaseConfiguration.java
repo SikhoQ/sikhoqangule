@@ -7,7 +7,6 @@ import com.enviro.assessment.grad001.sikhoqangule.persistence.WasteCategoryRepos
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import java.util.List;
 
 @Configuration
@@ -18,7 +17,7 @@ public class DatabaseConfiguration {
             WasteCategory paper = new WasteCategory(null, "Paper", "Normal paper");
             WasteCategory organicWaste = new WasteCategory(null, "Organic", "Waste from food and gardens");
 
-            DisposalGuideline paperDisposalGuideline = new DisposalGuideline(null, "Place in blue bin", paper);
+            DisposalGuideline paperDisposalGuideline = new DisposalGuideline(null, "Place in appropriate bin", paper);
             DisposalGuideline organicWasteDisposalGuideline = new DisposalGuideline(null, "Collect in designated container", organicWaste);
 
             RecyclingTip paperRecyclingTip = new RecyclingTip(null, "Check for contamination before recycling", paper);
