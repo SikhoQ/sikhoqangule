@@ -15,14 +15,14 @@ public class DatabaseConfiguration {
     @Bean
     CommandLineRunner initDatabase(WasteCategoryRepository categoryRepository) {
         return args -> {
-            WasteCategory paper = new WasteCategory("Paper", "Normal paper");
-            WasteCategory organicWaste = new WasteCategory("Organic", "Waste from food and gardens");
+            WasteCategory paper = new WasteCategory(null, "Paper", "Normal paper");
+            WasteCategory organicWaste = new WasteCategory(null, "Organic", "Waste from food and gardens");
 
-            DisposalGuideline paperDisposalGuideline = new DisposalGuideline("Place in blue bin", paper);
-            DisposalGuideline organicWasteDisposalGuideline = new DisposalGuideline("Collect in designated container", organicWaste);
+            DisposalGuideline paperDisposalGuideline = new DisposalGuideline(null, "Place in blue bin", paper);
+            DisposalGuideline organicWasteDisposalGuideline = new DisposalGuideline(null, "Collect in designated container", organicWaste);
 
-            RecyclingTip paperRecyclingTip = new RecyclingTip("Check for contamination before recycling", paper);
-            RecyclingTip organicWasteRecyclingTip = new RecyclingTip("Make garden compost", organicWaste);
+            RecyclingTip paperRecyclingTip = new RecyclingTip(null, "Check for contamination before recycling", paper);
+            RecyclingTip organicWasteRecyclingTip = new RecyclingTip(null, "Make garden compost", organicWaste);
 
             paper.getDisposalGuidelines().add(paperDisposalGuideline);
             paper.getRecyclingTips().add(paperRecyclingTip);

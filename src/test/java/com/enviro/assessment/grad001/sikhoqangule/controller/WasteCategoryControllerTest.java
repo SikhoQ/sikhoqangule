@@ -28,7 +28,7 @@ public class WasteCategoryControllerTest {
 
     @Test
     public void testGetAllCategories() throws Exception {
-        List<WasteCategory> categories = List.of(new WasteCategory("Paper", "Normal paper"));
+        List<WasteCategory> categories = List.of(new WasteCategory(null, "Paper", "Normal paper"));
         when(wasteCategoryService.getAllCategories()).thenReturn(categories);
 
         mockMvc.perform(get("/api/categories"))
@@ -38,7 +38,7 @@ public class WasteCategoryControllerTest {
 
     @Test
     public void testCreateCategory() throws Exception {
-        WasteCategory newCategory = new WasteCategory("Metal", "Metal waste such as cans");
+        WasteCategory newCategory = new WasteCategory(null, "Metal", "Metal waste such as cans");
         when(wasteCategoryService.createCategory(any(WasteCategory.class))).thenReturn(newCategory);
 
         mockMvc.perform(post("/api/categories")
@@ -50,7 +50,7 @@ public class WasteCategoryControllerTest {
 
     @Test
     public void testGetCategoryById() throws Exception {
-        WasteCategory category = new WasteCategory("Paper", "Normal paper");
+        WasteCategory category = new WasteCategory(null, "Paper", "Normal paper");
         when(wasteCategoryService.getCategoryById(anyLong())).thenReturn(category);
 
         mockMvc.perform(get("/api/categories/1")

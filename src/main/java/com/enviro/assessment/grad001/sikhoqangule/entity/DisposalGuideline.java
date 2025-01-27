@@ -4,9 +4,15 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "DISPOSAL_GUIDELINES")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class DisposalGuideline {
 
     @Id
@@ -21,37 +27,4 @@ public class DisposalGuideline {
     @JoinColumn(nullable = false)
     @JsonIgnoreProperties({"recyclingTips", "disposalGuidelines"})
     private WasteCategory wasteCategory;
-
-    // default constructor is required by JPA
-    public DisposalGuideline() {}
-
-    // to allow easy population when configuring db
-    public DisposalGuideline(String guideline, WasteCategory wasteCategory) {
-        this.guideline = guideline;
-        this.wasteCategory = wasteCategory;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getGuideline() {
-        return guideline;
-    }
-
-    public void setGuideline(String guideline) {
-        this.guideline = guideline;
-    }
-
-    public WasteCategory getWasteCategory() {
-        return wasteCategory;
-    }
-
-    public void setWasteCategory(WasteCategory wasteCategory) {
-        this.wasteCategory = wasteCategory;
-    }
 }

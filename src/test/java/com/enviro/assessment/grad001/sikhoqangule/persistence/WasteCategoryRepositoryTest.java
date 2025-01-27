@@ -15,7 +15,7 @@ class WasteCategoryRepositoryTest {
 
     @Test
     void testSaveAndFindWasteCategory() {
-        WasteCategory category = new WasteCategory("TestCategory", "Test description");
+        WasteCategory category = new WasteCategory(null, "TestCategory", "Test description");
         WasteCategory savedCategory = repository.save(category);
 
         Optional<WasteCategory> foundCategory = repository.findById(savedCategory.getId());
@@ -25,7 +25,7 @@ class WasteCategoryRepositoryTest {
 
     @Test
     void testDeleteWasteCategory() {
-        WasteCategory category = new WasteCategory("TestCategory2", "Test description 2");
+        WasteCategory category = new WasteCategory(null, "TestCategory2", "Test description 2");
         WasteCategory savedCategory = repository.save(category);
 
         repository.delete(savedCategory);

@@ -34,7 +34,7 @@ class WasteCategoryServiceTest {
 
     @Test
     void testGetCategoryById() {
-        WasteCategory category = new WasteCategory("Plastic", "Plastic waste");
+        WasteCategory category = new WasteCategory(null, "Plastic", "Plastic waste");
         when(repository.findById(1L)).thenReturn(Optional.of(category));
 
         WasteCategory result = service.getCategoryById(1L);
@@ -44,7 +44,7 @@ class WasteCategoryServiceTest {
 
     @Test
     void testCreateCategory() {
-        WasteCategory category = new WasteCategory("Paper", "Paper waste");
+        WasteCategory category = new WasteCategory(null, "Paper", "Paper waste");
         when(repository.save(any(WasteCategory.class))).thenReturn(category);
 
         WasteCategory result = service.createCategory(category);
