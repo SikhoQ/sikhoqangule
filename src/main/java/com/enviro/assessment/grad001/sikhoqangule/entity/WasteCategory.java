@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Entity class representing a Waste Category.
+ */
 @Entity
 @Table(name = "WASTE_CATEGORIES")
 @Data
@@ -35,6 +38,14 @@ public class WasteCategory {
     @JsonIgnoreProperties("wasteCategory")
     private List<RecyclingTip> recyclingTips = new ArrayList<>();
 
+    /**
+     * Constructs a new Waste Category with the given id, name, and description.
+     * Manually implemented to exclude 'disposalGuidelines' and 'recycleTips'
+     *
+     * @param id the unique identifier for the Waste Category
+     * @param categoryName the name of the Waste Category
+     * @param description a description of the Waste Category
+     */
     public WasteCategory(Long id, String categoryName, String description) {
         this.id = id;
         this.categoryName = categoryName;

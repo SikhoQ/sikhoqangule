@@ -10,7 +10,7 @@ clean:
 	@mvn clean
 	@echo "✅ Clean complete."
 
-build:
+build: clean
 	@echo "🔨 Building the project..."
 	@mvn compile
 	@echo "✅ Build complete."

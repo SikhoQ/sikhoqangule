@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Entity class representing a Recycling Tip.
+ */
 @Entity
 @Table(name = "RECYCLE_TIPS")
 @Data

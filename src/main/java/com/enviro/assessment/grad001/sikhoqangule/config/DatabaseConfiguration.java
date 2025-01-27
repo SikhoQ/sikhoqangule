@@ -9,8 +9,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
+/**
+ * Configuration class for initializing the database with pre-defined waste categories,
+ * disposal guidelines, and recycling tips.
+ */
 @Configuration
 public class DatabaseConfiguration {
+
+    /**
+     * Bean method for initializing the database with waste categories and their associated
+     * disposal guidelines and recycling tips.
+     *
+     * @param categoryRepository the repository for managing WasteCategory entities
+     * @return a CommandLineRunner to run the initialization code
+     */
     @Bean
     CommandLineRunner initDatabase(WasteCategoryRepository categoryRepository) {
         return args -> {
